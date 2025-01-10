@@ -1,17 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tolerator
-  labels:
+  name: nginx-hdd
+  labels: 
     env: test
 spec:
   containers:
-  - name: nginx
+  - name: nginx-hdd
     image: nginx
     imagePullPolicy: IfNotPresent
   tolerations:
-  - key: "example-key"
+  - key: "storage"
     operator: "Equal"
-    value: "value1"
+    value: "hdd"
     effect: "NoSchedule"
-
